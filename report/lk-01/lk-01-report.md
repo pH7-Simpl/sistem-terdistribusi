@@ -9,4 +9,36 @@
 6. Submit link ke repository anda ke Tugas ini.
 
 # Report
-Report
+## 1. Ujicoba REST
+1. Mengikuti langkah - langkah yang ada pada Instruksi. \
+![rest-instruction](src/1.png)
+- Hasil mengikuti Instruksi
+    1. Menjalankan perintah docker compose -f compose/rest.yml up -d
+    ![rest-command-1](src/2.png)
+    2. Menjalankan perintah docker compose -f compose/rest.yml exec rest-server python server.py
+    ![rest-command-2](src/3.png)
+    3. Menjalankan perintah docker compose -f compose/rest.yml exec rest-client python client.py --op both -a 2 -b 3
+    ![rest-command-3](src/4.png)
+
+2. Memodifikasi source code
+    1. Mengubah client.py
+        1. Menambahkan fungsi call_calc(expr) \
+        ![modificate-client.py-1](src/5.png)
+        2. Memodifikasi main function \
+        ![modificate-client.py-2](src/6.png)
+    2. Mengubah server.py
+        1. Import sympy \
+        ![modificate-server.py-1](src/7.png)
+        2. Menambahkan fungsi calc_expression \
+        ![modificate-server.py-2](src/8.png)
+    3. mengubah requirement.txt
+        1. Menambahkan sympy kedalam library \
+        ![modificate-requirement.txt-1](src/9.png)
+
+3. Menjalankan source code yang sudah termodifikasi
+    1. Menjalankan perintah docker compose -f compose/rest.yml up -d
+    ![rest-modified-command-1](src/10.png)
+    2. Menjalankan perintah docker compose -f compose/rest.yml exec rest-server python server.py
+    ![rest-modified-command-2](src/11.png)
+    3. Menjalankan perintah docker compose -f compose/rest.yml exec rest-client python client.py --op calc --expr "(10/2)+7*3"
+    ![rest-modified-command-3](src/12.png)

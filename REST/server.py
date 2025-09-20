@@ -7,6 +7,7 @@ Created on Sun Sep  8 17:02:45 2024
 """
 
 from flask import Flask, request, jsonify
+from sympy import sympify
 
 # Inisialisasi aplikasi Flask
 app = Flask(__name__)
@@ -39,6 +40,21 @@ def mul_numbers():
     except (TypeError, ValueError):
         # Menangani error jika input tidak valid
         return jsonify({'error': 'Invalid input'}), 400
+    
+# Endpoint untuk kalkulasi bebas
+@app.route('/calc', methods=['GET'])
+def calc_expression():
+    expr = request.args.get('expr')
+    if not expr:
+        return jsonify({'error': 'No expression provided'}), 400
+
+    try:
+        # Parsing dan evaluasi ekspresi
+        parsed = sympify(expr)  # cek apakah valid
+        result = float(parsed.evalf())  # hitung hasil
+        return jsonify({'result': result})
+    except Exception as e:
+        return jsonify({'error': f'Invalid expression: {str(e)}'}), 400
 
 # Jalankan server di port 5000
 if __name__ == '__main__':
