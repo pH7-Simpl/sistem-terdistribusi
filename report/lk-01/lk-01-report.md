@@ -13,12 +13,21 @@
 1. Mengikuti langkah - langkah yang ada pada Instruksi. \
 ![rest-instruction](src/1.png)
 - Hasil mengikuti Instruksi
-    1. Menjalankan perintah docker compose -f compose/rest.yml up -d \
-    ![rest-command-1](src/2.png)
-    2. Menjalankan perintah docker compose -f compose/rest.yml exec rest-server python server.py \
-    ![rest-command-2](src/3.png)
-    3. Menjalankan perintah docker compose -f compose/rest.yml exec rest-client python client.py --op both -a 2 -b 3 \
-    ![rest-command-3](src/4.png)
+    1. Menjalankan perintah:
+        ```
+        docker compose -f compose/rest.yml up -d
+        ```
+        ![rest-command-1](src/2.png)
+    2. Menjalankan perintah:
+        ```
+        docker compose -f compose/rest.yml exec rest-server python server.py
+        ```
+        ![rest-command-2](src/3.png)
+    3. Menjalankan perintah:
+        ```
+        docker compose -f compose/rest.yml exec rest-client python client.py --op both -a 2 -b 3
+        ```
+        ![rest-command-3](src/4.png)
 
 2. Memodifikasi source code
     1. Mengubah client.py
@@ -36,25 +45,43 @@
         ![modified-requirement.txt-1](src/9.png)
 
 3. Menjalankan source code yang sudah termodifikasi
-    1. Menjalankan perintah docker compose -f compose/rest.yml up -d \
-    ![rest-modified-command-1](src/10.png)
-    2. Menjalankan perintah docker compose -f compose/rest.yml exec rest-server python server.py \
-    ![rest-modified-command-2](src/11.png)
-    3. Menjalankan perintah docker compose -f compose/rest.yml exec rest-client python client.py --op calc --expr "(10/2)+7*3" \
-    ![rest-modified-command-3](src/12.png)
+    1. Menjalankan perintah:
+        ```
+        docker compose -f compose/rest.yml up -d
+        ```
+        ![rest-modified-command-1](src/10.png)
+    2. Menjalankan perintah:
+        ```
+        docker compose -f compose/rest.yml exec rest-server python server.py
+        ```
+        ![rest-modified-command-2](src/11.png)
+    3. Menjalankan perintah:
+        ```
+        docker compose -f compose/rest.yml exec rest-client python client.py --op calc --expr "(10/2)+7*3"
+        ```
+        ![rest-modified-command-3](src/12.png)
 
 
 ## 2. Ujicoba Reqresp
 1. Mengikuti langkah - langkah yang ada pada Instruksi. \
 ![reqresp-instruction](src/13.png)
 - Hasil mengikuti instruksi
-    1. Menjalankan perintah docker compose -f compose/reqresp.yml up -d \
-    ![rest-command-1a](src/14.png) \
-    ![rest-command-1b](src/15.png)
-    2. Menjalankan perintah docker compose -f compose/reqresp.yml exec reqresp-server python server.py \
-    ![rest-command-2](src/16.png)
-    3. Menjalankan perintah docker compose -f compose/reqresp.yml exec reqresp-client python client.py \
-    ![rest-command-3](src/17.png)
+    1. Menjalankan perintah:
+        ```
+        docker compose -f compose/reqresp.yml up -d
+        ```
+        ![rest-command-1a](src/14.png) \
+        ![rest-command-1b](src/15.png)
+    2. Menjalankan perintah:
+        ```
+        docker compose -f compose/reqresp.yml exec reqresp-server python server.py
+        ```
+        ![rest-command-2](src/16.png)
+    3. Menjalankan perintah:
+        ```
+        docker compose -f compose/reqresp.yml exec reqresp-client python client.py
+        ```
+        ![rest-command-3](src/17.png)
     4. Mencoba tcp reqresp \
     ![try-reqresp-1](src/18.png)
     5. Mencoba tcp reqresp dengan dibaca tcp-dump \
@@ -68,12 +95,21 @@
 1. Mengikuti langkah - langkah yang ada pada Instruksi. \
 ![json-rpc-instruction](src/23.png)
 - Hasil mengikuti instruksi
-    1. Menjalankan perintah docker compose -f compose/rpc.yml up -d \
-    ![json-rpc-command-1](src/24.png)
-    2. Menjalankan perintah docker compose -f compose/rpc.yml exec rpc-server python rpcserver.py \
-    ![json-rpc-command-2](src/25.png)
-    3. Menjalankan perintah docker compose -f compose/rpc.yml exec rpc-client python rpcclient.py \
-    ![json-rpc-command-3](src/26.png)
+    1. Menjalankan perintah:
+        ```
+        docker compose -f compose/rpc.yml up -d
+        ```
+        ![json-rpc-command-1](src/24.png)
+    2. Menjalankan perintah:
+        ```
+        docker compose -f compose/rpc.yml exec rpc-server python rpcserver.py
+        ```
+        ![json-rpc-command-2](src/25.png)
+    3. Menjalankan perintah:
+        ```
+        docker compose -f compose/rpc.yml exec rpc-client python rpcclient.py
+        ```
+        ![json-rpc-command-3](src/26.png)
 
 2. Memodifikasi source code
     1. mengubah requirement.txt \
@@ -86,23 +122,41 @@
         ![json-rpc-modified-rpcclient.py-1](src/29.png)
 
 3. Menjalankan source code yang sudah termodifikasi
-    1. Menjalankan perintah docker compose -f compose/rpc.yml up -d \
-    ![json-rpc-modified-command-1](src/30.png)
-    2. Menjalankan perintah docker compose -f compose/rpc.yml exec rpc-server python rpcserver.py \
-    ![json-rpc-modified-command-2](src/31.png)
-    3. Menjalankan perintah docker compose -f compose/rpc.yml exec rpc-client python rpcclient.py \
-    ![json-rpc-modified-command-3](src/32.png)
+    1. Menjalankan perintah:
+        ```
+        docker compose -f compose/rpc.yml up -d
+        ```
+        ![json-rpc-modified-command-1](src/30.png)
+    2. Menjalankan perintah:
+        ```
+        docker compose -f compose/rpc.yml exec rpc-server python rpcserver.py
+        ```
+        ![json-rpc-modified-command-2](src/31.png)
+    3. Menjalankan perintah:
+        ```
+        docker compose -f compose/rpc.yml exec rpc-client python rpcclient.py
+        ```
+        ![json-rpc-modified-command-3](src/32.png)
 
 ## 4. Ujicoba SOAP
 1. Mengikuti langkah - langkah yang ada pada Instruksi. \
 ![soap-instruction](src/33.png)
 - Hasil mengikuti Instruksi
-    1. Menjalankan perintah docker compose -f compose/soap.yml up -d \
-    ![soap-command-1](src/34.png)
-    2. Menjalankan perintah docker compose -f compose/soap.yml exec soap-server python server.py \
-    ![soap-command-2](src/35.png)
-    3. Menjalankan perintah docker compose -f compose/soap.yml exec soap-client python client.py \
-    ![soap-command-3](src/36.png)
+    1. Menjalankan perintah:
+        ```
+        docker compose -f compose/soap.yml up -d
+        ```
+        ![soap-command-1](src/34.png)
+    2. Menjalankan perintah:
+        ```
+        docker compose -f compose/soap.yml exec soap-server python server.py
+        ```
+        ![soap-command-2](src/35.png)
+    3. Menjalankan perintah:
+        ```
+        docker compose -f compose/soap.yml exec soap-client python client.py
+        ```
+        ![soap-command-3](src/36.png)
 
 2. Memodifikasi source code
     1. Mengubah server.py
@@ -118,9 +172,39 @@
         ![modified-soap-requirement.txt-1](src/40.png)
 
 3. Menjalankan source code yang sudah termodifikasi
-    1. Menjalankan perintah docker compose -f compose/soap.yml up -d \
-    ![soap-modified-command-1](src/41.png)
-    2. Menjalankan perintah docker compose -f compose/soap.yml exec soap-server python server.py \
-    ![soap-modified-command-2](src/42.png)
-    3. Menjalankan perintah docker compose -f compose/soap.yml exec soap-client python client.py \
-    ![soap-modified-command-3](src/43.png)
+    1. Menjalankan perintah:
+        ```
+        docker compose -f compose/soap.yml up -d
+        ```
+        ![soap-modified-command-1](src/41.png)
+    2. Menjalankan perintah:
+        ```
+        docker compose -f compose/soap.yml exec soap-server python server.py
+        ```
+        ![soap-modified-command-2](src/42.png)
+    3. Menjalankan perintah:
+        ```
+        docker compose -f compose/soap.yml exec soap-client python client.py
+        ```
+        ![soap-modified-command-3](src/43.png)
+
+## 5. Ujicoba MQTT
+1. Mengikuti langkah - langkah yang ada pada Instruksi. \
+![mqtt-instruction](src/44.png)
+- Hasil mengikuti Instruksi
+    1. Menjalankan perintah:
+        ```
+        docker compose -f compose/mqtt.yml up -d
+        ```
+        ![mqtt-command-1](src/45.png)
+    2. Menjalankan perintah:
+        ```
+        docker compose -f compose/mqtt.yml exec mqtt-sub python sub.py
+        ```
+        ![mqtt-command-2](src/46.png)
+    3. Menjalankan perintah:
+        ```
+        docker compose -f compose/mqtt.yml exec mqtt-pub python pub.py
+        ```
+        ![mqtt-command-3](src/47.png)
+
