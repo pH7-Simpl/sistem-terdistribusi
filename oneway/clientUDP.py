@@ -23,5 +23,21 @@ client_socket.sendto(message.encode('utf-8'), server_address)
 data, server = client_socket.recvfrom(1024)
 print(f"Received from server: {data.decode('utf-8')}")
 
+# Send data to server (2)
+message2 = "Im a College Student at Brawijaya University and my name is Eleazar Tadeo Eman!"
+client_socket.sendto(message2.encode('utf-8'), server_address)
+
+# Receive response from server (2)
+data, server = client_socket.recvfrom(1024)
+print(f"Received from server: {data.decode('utf-8')}")
+
+# Send data to server (3)
+message3 = "This message here indicates that I successfully modified and use the code successfully!"
+client_socket.sendto(message3.encode('utf-8'), server_address)
+
+# Receive response from server (3)
+data, server = client_socket.recvfrom(1024)
+print(f"Received from server: {data.decode('utf-8')}")
+
 # Close the socket
 client_socket.close()

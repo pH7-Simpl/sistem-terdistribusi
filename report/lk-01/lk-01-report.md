@@ -208,3 +208,44 @@
         ```
         ![mqtt-command-3](src/47.png)
 
+## 6. Ujicoba UDP One-way
+1. Mengikuti langkah - langkah yang ada pada Instruksi. \
+![udp-oneway-instruction](src/48.png)
+- Hasil mengikuti Instruksi
+    1. Menjalankan perintah:
+        ```
+        docker compose -f compose/udp.yml up -d
+        ```
+        ![udp-oneway-command-1](src/49.png)
+    2. Menjalankan perintah:
+        ```
+        docker compose -f compose/udp.yml exec udp-server python serverUDP.py
+        ```
+        ![udp-oneway-command-2](src/50.png)
+    3. Menjalankan perintah:
+        ```
+        docker compose -f compose/udp.yml exec udp-client python clientUDP.py
+        ```
+        ![udp-oneway-command-3](src/51.png)
+
+2. Memodifikasi source code
+    1. Mengubah clientUDP.py
+        1. Menambahkan pesan ektra kepada server \
+        ![modified-udp-oneway-clientUDP.py-1](src/52.png)
+
+3. Menjalankan source code yang sudah termodifikasi
+    1. Menjalankan perintah:
+        ```
+        docker compose -f compose/udp.yml up -d
+        ```
+        ![udp-oneway-modified-command-1](src/53.png)
+    2. Menjalankan perintah:
+        ```
+        docker compose -f compose/udp.yml exec udp-server python serverUDP.py
+        ```
+        ![udp-oneway-modified-command-2](src/54.png)
+    3. Menjalankan perintah:
+        ```
+        docker compose -f compose/udp.yml exec udp-client python clientUDP.py
+        ```
+        ![udp-oneway-modified-command-3](src/55.png)
