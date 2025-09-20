@@ -30,3 +30,7 @@ print(f"Result of add: {result_add['result']}")
 # Panggil operasi perkalian
 result_multiply = call_rpc("multiply", [10, 5])
 print(f"Result of multiply: {result_multiply['result']}")
+
+# Panggil operasi kalkulasi bebas (expression)
+result_calc = call_rpc("calc", ["(10/2)+7*3"])
+print(f"Result of calc: {result_calc['result']}")

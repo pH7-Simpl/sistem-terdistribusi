@@ -9,6 +9,7 @@ Created on Fri Sep 20 20:43:48 2024
 from jsonrpc import JSONRPCResponseManager, dispatcher
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import json
+from sympy import sympify
 
 # Mendefinisikan metode penjumlahan
 @dispatcher.add_method
@@ -19,6 +20,15 @@ def add(a, b):
 @dispatcher.add_method
 def multiply(a, b):
     return a * b
+
+# Mendefinisikan metode kalkulasi bebas (free calc) menggunakan sympy
+@dispatcher.add_method
+def calc(expr: str):
+    try:
+        result = sympify(expr).evalf()  # aman, support + - * / ^ dll.
+        return float(result) if result.is_real else str(result)
+    except Exception as e:
+        return f"Error: {str(e)}"
 
 # Kelas untuk menangani permintaan HTTP
 class RequestHandler(BaseHTTPRequestHandler):
