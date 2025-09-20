@@ -42,3 +42,24 @@
     ![rest-modified-command-2](src/11.png)
     3. Menjalankan perintah docker compose -f compose/rest.yml exec rest-client python client.py --op calc --expr "(10/2)+7*3"
     ![rest-modified-command-3](src/12.png)
+
+
+## 2. Ujicoba Reqresp
+1. Mengikuti langkah - langkah yang ada pada Instruksi. \
+![reqresp-instruction](src/13.png)
+- Hasil mengikuti instruksi
+    1. Menjalankan perintah docker compose -f compose/reqresp.yml up -d \
+    ![rest-command-1a](src/14.png)
+    ![rest-command-1b](src/15.png)
+    2. Menjalankan perintah docker compose -f compose/reqresp.yml exec reqresp-server python server.py \
+    ![rest-command-2](src/16.png)
+    3. Menjalankan perintah docker compose -f compose/reqresp.yml exec reqresp-client python client.py \
+    ![rest-command-3](src/17.png)
+    4. Mencoba tcp reqresp \
+    ![try-reqresp-1](src/18.png)
+    5. Mencoba tcp reqresp dengan dibaca tcp-dump \
+    ![try-reqresp-2](src/19.png)
+    6. Mencoba tcp reqresp dibaca tcp-dumb dan wireshark \
+    ![try-reqresp-3](src/20.png)
+    ![try-reqresp-3](src/21.png)
+    ![try-reqresp-3](src/22.png)
