@@ -13,11 +13,11 @@
 1. Mengikuti langkah - langkah yang ada pada Instruksi. \
 ![rest-instruction](src/1.png)
 - Hasil mengikuti Instruksi
-    1. Menjalankan perintah docker compose -f compose/rest.yml up -d
+    1. Menjalankan perintah docker compose -f compose/rest.yml up -d \
     ![rest-command-1](src/2.png)
-    2. Menjalankan perintah docker compose -f compose/rest.yml exec rest-server python server.py
+    2. Menjalankan perintah docker compose -f compose/rest.yml exec rest-server python server.py \
     ![rest-command-2](src/3.png)
-    3. Menjalankan perintah docker compose -f compose/rest.yml exec rest-client python client.py --op both -a 2 -b 3
+    3. Menjalankan perintah docker compose -f compose/rest.yml exec rest-client python client.py --op both -a 2 -b 3 \
     ![rest-command-3](src/4.png)
 
 2. Memodifikasi source code
@@ -92,3 +92,35 @@
     ![json-rpc-modified-command-2](src/31.png)
     3. Menjalankan perintah docker compose -f compose/rpc.yml exec rpc-client python rpcclient.py \
     ![json-rpc-modified-command-3](src/32.png)
+
+## 4. Ujicoba SOAP
+1. Mengikuti langkah - langkah yang ada pada Instruksi. \
+![soap-instruction](src/33.png)
+- Hasil mengikuti Instruksi
+    1. Menjalankan perintah docker compose -f compose/soap.yml up -d \
+    ![soap-command-1](src/34.png)
+    2. Menjalankan perintah docker compose -f compose/soap.yml exec soap-server python server.py \
+    ![soap-command-2](src/35.png)
+    3. Menjalankan perintah docker compose -f compose/soap.yml exec soap-client python client.py \
+    ![soap-command-3](src/36.png)
+
+2. Memodifikasi source code
+    1. Mengubah server.py
+        1. Menambahkan import sympy dan menambahkan Unicode dan Double dari spyne \
+        ![modified-soap-client.py-1](src/37.png)
+        2. Menambahkan fungsi kalkulasi bebas pada kelas CalculatorService \
+        ![modified-soap-client.py-2](src/38.png)
+    2. Mengubah client.py
+        1. Menambahkan pengujian kalkulasi bebas (2 kalkulasi) \
+        ![modified-soap-server.py-1](src/39.png)
+    3. mengubah requirement.txt
+        1. Menambahkan sympy kedalam library \
+        ![modified-soap-requirement.txt-1](src/40.png)
+
+3. Menjalankan source code yang sudah termodifikasi
+    1. Menjalankan perintah docker compose -f compose/soap.yml up -d \
+    ![soap-modified-command-1](src/41.png)
+    2. Menjalankan perintah docker compose -f compose/soap.yml exec soap-server python server.py \
+    ![soap-modified-command-2](src/42.png)
+    3. Menjalankan perintah docker compose -f compose/soap.yml exec soap-client python client.py \
+    ![soap-modified-command-3](src/43.png)
